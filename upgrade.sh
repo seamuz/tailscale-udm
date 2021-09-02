@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-read -p "Enter the version you want to upgrade to (Example: 1.14.0) without space: " -r VERSION
+printf "Enter the version you want to upgrade to (Example: 1.14.0) without space: "
+read VERSION
 
 #VERSION="${1?Version must be provided as the first argument to this script}"
 WORKDIR="$(mktemp -d || exit 1)"
