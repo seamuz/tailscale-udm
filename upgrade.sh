@@ -2,15 +2,14 @@
 set -e
 
 VERSION="${1?Version must be provided as the first argument to this script}"
-WORKDIR="$(mktemp -d || exit 1)"
-trap 'rm -rf ${WORKDIR}' EXIT
-TAILSCALE_TGZ="${WORKDIR}/tailscale.tgz"
 
 echo "Installing Tailscale in /mnt/data/tailscale"
-curl -o "${TAILSCALE_TGZ}" "https://pkgs.tailscale.com/stable/tailscale_${VERSION}_arm64.tgz"
-tar xzf "${TAILSCALE_TGZ}" -C "${WORKDIR}"
+rm -f /tmp/tailscale.tgz
+curl -o /tmp/tailscale.tgz https://pkgs.tailscale.com/stable/tailscale_${VERSION}_arm64.tgz
+mkdir -p /tmp/tailscale
+tar xzf /tmp/tailscale.tgz -C /tmp/tailscale
 mkdir -p /mnt/data/tailscale
-cp -R "${WORKDIR}/tailscale_${VERSION}_arm64"/* /mnt/data/tailscale/
+cp -R /tmp/tailscale/tailscale_${VERSION}_arm64/* /mnt/data/tailscale/
 
 echo "Shutting down tailscaled"
 /mnt/data/tailscale/tailscale down
