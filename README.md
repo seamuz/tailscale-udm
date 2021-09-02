@@ -10,7 +10,7 @@ to provide a persistent service and runs using Tailscale's usermode networking f
 2. Run the `install.sh` script to install `tailscale` and the startup script on your UDM.
    
    ```sh
-   curl -sSL https://raw.github.com/seamuz/tailscale-udm/master/install.sh | sh
+   curl -sSL https://raw.githubusercontent.com/seamuz/tailscale-udm/main/install.sh | sh
    ```
 3. Follow the on-screen steps to configure `tailscale` and connect it to your network.
 4. Confirm that `tailscale` is working by running `/mnt/data/tailscale/tailscale status`
@@ -19,14 +19,14 @@ to provide a persistent service and runs using Tailscale's usermode networking f
 Upgrading can be done by running the upgrade script below.
 
 ```sh
-/mnt/data/tailscale/upgrade.sh 1.12.3
+/mnt/data/tailscale/upgrade.sh
 ```
 
 ### Remove Tailscale
 To remove Tailscale, you can run the following command, or run the steps below manually.
    
 ```sh
-curl -sSL https://raw.githubusercontent.com/SierraSoftworks/tailscale-udm/main/uninstall.sh | sh
+curl -sSL https://raw.githubusercontent.com/seamuz/tailscale-udm/main/uninstall.sh | sh
 ```
 
 1. Kill the `tailscaled` daemon.
