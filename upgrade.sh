@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo -e "Enter the version you want to upgrade to (Example: 1.14.0) without space: "
+echo "Enter the version you want to upgrade to (Example: 1.14.0) without space: "
 read VERSION
 set -e
 
