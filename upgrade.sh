@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 echo "Enter the version you want to upgrade to (Example: 1.14.0) without space: "
