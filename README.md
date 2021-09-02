@@ -15,6 +15,19 @@ to provide a persistent service and runs using Tailscale's usermode networking f
 3. Follow the on-screen steps to configure `tailscale` and connect it to your network.
 4. Confirm that `tailscale` is working by running `/mnt/data/tailscale/tailscale status`
 
+### Tailscale as subnet router
+
+```sh
+/mnt/data/tailscale/tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24
+```
+Replace the subnets in the example above with the right ones for your network. Both IPv4 and IPv6 subnets are supported.
+
+### Tailscale as exit node
+
+```sh
+/mnt/data/tailscale/tailscale up --advertise-exit-node
+```
+
 ### Upgrade Tailscale
 Upgrading can be done by running the upgrade script below.
 
