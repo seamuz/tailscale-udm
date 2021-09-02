@@ -1,7 +1,7 @@
 #!/bin/sh
 
-read -p "Enter the version you want to upgrade to (Example: 1.14.0) without space: " VERSION
-
+echo -e "Enter the version you want to upgrade to (Example: 1.14.0) without space: "
+read VERSION
 set -e
 
 #VERSION="${1?Version must be provided as the first argument to this script}"
