@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-VERSION="${1:-1.12.3}"
+VERSION="${1:-1.14.0}"
 WORKDIR="$(mktemp -d || exit 1)"
 trap 'rm -rf ${WORKDIR}' EXIT
 TAILSCALE_TGZ="${WORKDIR}/tailscale.tgz"
@@ -13,10 +13,10 @@ mkdir -p /mnt/data/tailscale
 cp -R "${WORKDIR}/tailscale_${VERSION}_arm64"/* /mnt/data/tailscale/
 
 echo "Installing Tailscale upgrade script in /mnt/data/tailscale/upgrade.sh"
-curl -o /mnt/data/tailscale/upgrade.sh -sSL https://raw.githubusercontent.com/SierraSoftworks/tailscale-udm/main/upgrade.sh
+curl -o /mnt/data/tailscale/upgrade.sh -sSL https://raw.githubusercontent.com/seamuz/tailscale-udm/main/upgrade.sh
 
 echo "Installing boot script for Tailscale"
-curl -o /mnt/data/on_boot.d/10-tailscaled.sh -sSL https://raw.githubusercontent.com/SierraSoftworks/tailscale-udm/main/on_boot.d/10-tailscaled.sh
+curl -o /mnt/data/on_boot.d/10-tailscaled.sh -sSL https://raw.githubusercontent.com/seamuz/tailscale-udm/main/on_boot.d/10-tailscaled.sh
 chmod +x /mnt/data/on_boot.d/10-tailscaled.sh
 
 echo "Starting tailscaled service"
