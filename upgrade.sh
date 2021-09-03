@@ -1,6 +1,11 @@
 #!/bin/sh
 set -e
 
+echo "Enter the version you want to update to without space: "
+read VERSION
+
+sleep 5
+
 VERSION="${1:-1.14.0}"
 WORKDIR="$(mktemp -d || exit 1)"
 trap 'rm -rf ${WORKDIR}' EXIT
