@@ -28,19 +28,21 @@ Replace the subnets in the example above with the right ones for your network. B
 /mnt/data/tailscale/tailscale up --advertise-exit-node
 ```
 
-### Upgrade Tailscale
+### Upgrade Tailscale to version 1.14.0
 Upgrading can be done by running the upgrade script below.
 
 ```sh
-/mnt/data/tailscale/upgrade.sh
+curl -sSL https://raw.githubusercontent.com/seamuz/tailscale-udm/main/upgrade.sh | sh
 ```
 
 ### Remove Tailscale
-To remove Tailscale, you can run the following command, or run the steps below manually.
+To remove Tailscale automatically, you can run the following command, 
    
 ```sh
 curl -sSL https://raw.githubusercontent.com/seamuz/tailscale-udm/main/uninstall.sh | sh
 ```
+
+or run the steps below manually.
 
 1. Kill the `tailscaled` daemon.
    
