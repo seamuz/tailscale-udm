@@ -28,7 +28,7 @@ Replace the subnets in the example above with the right ones for your network. B
 /mnt/data/tailscale/tailscale up --advertise-exit-node
 ```
 
-### Upgrade Tailscale to version 1.14.4
+### Upgrade Tailscale to version 1.14.3
 Upgrading can be done by running the upgrade script below.
 
 ```sh
