@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-VERSION="${1:-1.14.4}"
+VERSION="${1:-1.14.3}"
 WORKDIR="$(mktemp -d || exit 1)"
 trap 'rm -rf ${WORKDIR}' EXIT
 TAILSCALE_TGZ="${WORKDIR}/tailscale.tgz"
